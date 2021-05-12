@@ -2,9 +2,9 @@ import React from 'react'
 
 function Navbar () {
   return (
-    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <nav class='navbar navbar-expand-lg navbar-dark custom-nav'>
       <div class='container-fluid'>
-        <ul class='navbar-nav justify-content-between'>
+        <ul class='navbar-nav nav-fill w-100'>
           <li class='nav-item'>
             <a class='nav-link active' aria-current='page' href='#'>
               <i class='fas fa-bars'></i>
