@@ -5,3 +5,7 @@
   --cool-gray: #c5ccd9;
   --green: #707fbc;
 }
+
+custom-nav {
+  background-color: var(--dark-gray);
+}
