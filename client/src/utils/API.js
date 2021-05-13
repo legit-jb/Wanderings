@@ -17,7 +17,7 @@ export default {
   deleteUser: function (id) {
     return axios.delete("/api/users/" + id);
   },
-  //Save a user to mongoDB by adding their sub value from auth0
+  //create a user in mongoDB by adding their sub value from auth0
   saveUser: function (userData) {
     return axios.post("/api/users", userData);
   },
@@ -25,15 +25,15 @@ export default {
   getMarkers: function () {
     return axios.get("/api/markers");
   },
-  //get all markers by mongoDB user id
+  //get marker by marker id
   getMarker: function (id) {
     return axios.get("/api/markers/" + id);
   },
-  //delete a marker from mongoDB
+  //delete a marker from mongoDB by marker id
   deleteMarker: function (id) {
     return axios.delete("/api/markers/" + id);
   },
-  //update a marker by userid, should usually only take in tags
+  //update a marker by marker id
   updateMarker: function (id) {
     return axios.delete("/api/markers/" + id);
   },
