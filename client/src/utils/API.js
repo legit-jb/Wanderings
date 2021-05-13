@@ -29,12 +29,12 @@ export default {
   getMarker: function (id) {
     return axios.get("/api/users/" + id);
   },
+  //get all markers by auth0 user sub
+  getMarker: function (id) {
+    return axios.get("/api/users/" + id);
+  },
   //get all markers by tag
   getMarkersTag: function (sub) {
-    return axios.get("/api/users/sub/" + sub);
-  },
-  //get all markers by a user AND a given tag
-  getMarkersUserTag: function (sub) {
     return axios.get("/api/users/sub/" + sub);
   },
   //delete a marker from mongoDB
