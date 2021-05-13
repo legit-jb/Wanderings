@@ -3,11 +3,16 @@ require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const cors = require("cors");
+const helmet = require("helmet");
+const { clientOrigins, serverPort } = require("./src/config/env.dev");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || serverPort;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {

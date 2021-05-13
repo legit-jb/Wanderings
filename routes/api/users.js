@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
+const { checkJwt } = require("../../src/authz/check-jwt");
 
 router.route("/")
   .get(userController.findAll)
