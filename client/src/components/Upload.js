@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 function Upload () {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState('')
+  const [url, setUrl] = useState('')
 
   const uploadImage = () => {
     const data = new FormData()
@@ -14,18 +15,27 @@ function Upload () {
       body: data
     })
       .then(res => res.json())
-      .then(data => {
-        console.log(data)
-      })
+      .then(res => setUrl(res.secure_url))
       .catch(err => console.log(err))
   }
 
   return (
-      <div className="bg-light">
-          <input className="form-control" type="file" onChange={(e) => setImage(e.target.files[0])} />
-          <button className="btn" onClick={uploadImage}>upload</button>
+    <div className='card custom-card'>
+      <div className='card-body'>
+        <input
+          className='form-control p-2'
+          type='file'
+          onChange={e => setImage(e.target.files[0])}
+        />
+        <button className='btn btn-secondary m-2' onClick={uploadImage}>
+          upload
+        </button>
+        <div className='container'>
+          <img src={url} />
+        </div>
       </div>
+    </div>
   )
 }
 
-export default Upload;
+export default Upload

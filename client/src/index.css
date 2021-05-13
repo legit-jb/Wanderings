@@ -9,3 +9,17 @@
 body {
   background-color: var(--dark-gray);
 }
+
+custom-card {
+  background-color: var(--green);
+  color: var(--dark-gray);
+  width: 20rem;
+}
+
+custom-btn {
+  background-color: var(--cool-gray);
+}
+
+custom-nav {
+  background-color: var(--dark-gray);
+}
