@@ -15,7 +15,10 @@ function Upload () {
       body: data
     })
       .then(res => res.json())
-      .then(res => setUrl(res.secure_url))
+      .then(res => {
+        console.log (res);
+        setUrl(res.secure_url);
+      })
       .catch(err => console.log(err))
   }
 
