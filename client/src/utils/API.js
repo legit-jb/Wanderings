@@ -23,30 +23,22 @@ export default {
   },
   // get all markers in mongoDB
   getMarkers: function () {
-    return axios.get("/api/users");
+    return axios.get("/api/markers");
   },
   //get all markers by mongoDB user id
   getMarker: function (id) {
-    return axios.get("/api/users/" + id);
-  },
-  //get all markers by auth0 user sub
-  getMarker: function (id) {
-    return axios.get("/api/users/" + id);
-  },
-  //get all markers by tag
-  getMarkersTag: function (sub) {
-    return axios.get("/api/users/sub/" + sub);
+    return axios.get("/api/markers/" + id);
   },
   //delete a marker from mongoDB
   deleteMarker: function (id) {
-    return axios.delete("/api/users/" + id);
+    return axios.delete("/api/markers/" + id);
   },
   //update a marker by userid, should usually only take in tags
   updateMarker: function (id) {
-    return axios.delete("/api/users/" + id);
+    return axios.delete("/api/markers/" + id);
   },
   // posts a marker to mongoDB
-  saveMarker: function (userData) {
-    return axios.post("/api/users", userData);
+  saveMarker: function (markerData) {
+    return axios.post("/api/markers", markerData);
   },
 };
