@@ -2,22 +2,22 @@ import React from 'react'
 
 function Navbar () {
   return (
-    <nav class='navbar navbar-expand-lg navbar-dark custom-nav'>
-      <div class='container-fluid'>
-        <ul class='navbar-nav nav-fill w-100'>
-          <li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='#'>
-              <i class='fas fa-bars'></i>
+    <nav className='navbar navbar-expand-lg navbar-dark custom-nav'>
+      <div className='container-fluid'>
+        <ul className='navbar-nav nav-fill w-100'>
+          <li className='nav-item'>
+            <a className='nav-link active' aria-current='page' href='#'>
+              <i className='fas fa-bars'></i>
             </a>
           </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='#'>
+          <li className='nav-item'>
+            <a className='nav-link' href='#'>
               Score
             </a>
           </li>
-          <li class='nav-item dropdown'>
+          <li className='nav-item dropdown'>
             <a
-              class='nav-link dropdown-toggle'
+              className='nav-link dropdown-toggle'
               href='#'
               id='navbarDropdownMenuLink'
               role='button'
@@ -26,27 +26,27 @@ function Navbar () {
             >
               Tags
             </a>
-            <ul class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+            <ul className='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
               <li>
-                <a class='dropdown-item' href='#'>
+                <a className='dropdown-item' href='#'>
                   I guess
                 </a>
               </li>
               <li>
-                <a class='dropdown-item' href='#'>
+                <a className='dropdown-item' href='#'>
                   this will
                 </a>
               </li>
               <li>
-                <a class='dropdown-item' href='#'>
+                <a className='dropdown-item' href='#'>
                   map over the tags?
                 </a>
               </li>
             </ul>
           </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='#'>
-              <i class='fas fa-plus'></i>
+          <li className='nav-item'>
+            <a className='nav-link' href='#'>
+              <i className='fas fa-plus'></i>
             </a>
           </li>
         </ul>
