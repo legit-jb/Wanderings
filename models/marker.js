@@ -6,6 +6,10 @@ const markerSchema = new Schema({
     img: { type: String, required: true },
     body: String,
     tags: [String],
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
   });
   
   const Marker = mongoose.model("Marker", markerSchema);
