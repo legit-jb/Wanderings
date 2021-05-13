@@ -1,7 +1,7 @@
 import React from 'react'
 import AuthenticationButton from "../components/authentication-button";
 
-function LoginPage () {
+function LandingPage () {
   return (
     <div>
         <AuthenticationButton />
@@ -9,4 +9,4 @@ function LoginPage () {
   )
 }
 
-export default LoginPage
+export default LandingPage

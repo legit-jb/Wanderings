@@ -4,7 +4,7 @@ import './App.css';
 
 import Upload from "./components/Upload";
 import Navbar from "./components/Navbar";
-import LoginPage from "./views/logintest";
+import LandingPage from "./views/landingpage";
 import ProtectedRoute from "./auth/protected-route";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Upload />
-      <LoginPage />
+      <LandingPage />
     </div>
   );
 };
