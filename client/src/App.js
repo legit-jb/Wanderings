@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+import AuthenticationButton from "./components/authentication-button";
 import './App.css';
 
 function App() {
