@@ -6,6 +6,8 @@ const markerSchema = new Schema({
     img: { type: String, required: true },
     body: String,
     tags: [String],
+    lat: Number,
+    lon: Number,
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User"
