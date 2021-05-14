@@ -1,8 +1,11 @@
 import React from 'react'
-import AuthenticationButton from "../components/authentication-button";
 import Map from "../components/Map";
+import Navbar from "../components/Navbar";
+import Upload from "../components/Upload";
+import TheModal from "../components/Modal";
+import AuthenticationButton from "../components/authentication-button";
 
-const LandingPage =() => {
+const HomePage =() => {
   const sample = [
     {
       id:"15572374ghg",
@@ -30,10 +33,13 @@ const LandingPage =() => {
   ]
   return (
     <div>
-        <AuthenticationButton />
+        <Navbar />
+        <Upload />
+        <TheModal />
         <Map markers={sample}/>
+        <AuthenticationButton />
     </div>
   )
 }
 
-export default LandingPage
+export default HomePage;
