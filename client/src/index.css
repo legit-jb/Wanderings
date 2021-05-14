@@ -55,4 +55,10 @@ custom-nav {
   width: 90%;
   border-radius: 10px;
 }
+
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 /*-- end leaflet --*/
