@@ -12,7 +12,7 @@ function TheModal() {
 
   return (
     <div>
-      <button onClick={toggleModal}>Open modal</button>
+      <button onClick={toggleModal} className='btn custom-btn'>Open modal</button>
 
       <Modal
         isOpen={isOpen}
@@ -32,7 +32,7 @@ function TheModal() {
             </li>
             <li>Don’t trespass or explore unsafe/abandoned structures</li>
           </ul>
-          <button onClick={toggleModal}>Agree</button>
+          <button onClick={toggleModal} className='btn custom-btn'>Agree</button>
         </div>
       </Modal>
     </div>
