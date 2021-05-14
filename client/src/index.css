@@ -10,18 +10,23 @@ body {
   background-color: var(--dark-gray);
 }
 
-custom-card {
+.custom-card {
   background-color: var(--blue);
   color: var(--dark-gray);
-  width: 20rem;
+  width: 75%;
+  border: 2px dashed var(--cool-gray);
 }
 
-custom-btn {
+.custom-btn {
   background-color: var(--cool-gray);
 }
 
-custom-nav {
+.custom-nav {
   background-color: var(--dark-gray);
+}
+
+.custom-nav a {
+  color: var(--very-light);
 }
 
 .mymodal {

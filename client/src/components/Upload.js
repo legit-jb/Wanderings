@@ -30,7 +30,7 @@ function Upload () {
           type='file'
           onChange={e => setImage(e.target.files[0])}
         />
-        <button className='btn btn-secondary m-2' onClick={uploadImage}>
+        <button className='btn custom-btn m-2' onClick={uploadImage}>
           upload
         </button>
         <div className='container'>
