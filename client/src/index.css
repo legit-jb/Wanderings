@@ -54,11 +54,13 @@ custom-nav {
   height: 500px;
   width: 90%;
   border-radius: 10px;
+  z-index: 0;
 }
 
 .leaflet-popup-content {
   display: flex;
   flex-direction: column;
   text-align: center;
+  z-index: 1;
 }
 /*-- end leaflet --*/
