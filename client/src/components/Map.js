@@ -28,7 +28,7 @@ const Map = (props) => {
     <MapContainer
       center={start}
       zoom={25}
-      scrollWheelZoom={true}
+      scrollWheelZoom={false}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
