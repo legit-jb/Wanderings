@@ -16,7 +16,6 @@ const Map = (props) => {
   const [activeMarker, setActiveMarker] = useState (null);
   return (
     <MapContainer
-      style={{ height: "500px", width:"80%", backgroundColor: "#dce2f2" }}
       center={start}
       zoom={10}
       scrollWheelZoom={true}
