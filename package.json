@@ -11,8 +11,8 @@
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build":
-    "cd client && INLINE_RUNTIME_CHUNK=false npm run buildnpm run build",
+    "prebuild": "INLINE_RUNTIME_CHUNK=false",
+    "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
