@@ -26,12 +26,11 @@ const Map = (props) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {props.markers.map((mark) => (
-        <Marker key={mark.id} position={[mark.lat, mark.long]}
-        onClick={()=>{
-          setActiveMarker(mark);
-          console.log("This is the active marker ", activeMarker)
-        }}
-        />
+        <Marker key={mark.id} position={[mark.lat, mark.long]}>
+          <Popup>
+            This is a popup
+          </Popup>
+        </Marker>
       ))}
     </MapContainer>
   );
