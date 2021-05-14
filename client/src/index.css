@@ -3,7 +3,7 @@
   --very-light: #dce2f2;
   --warm-gray: #b4b7bf;
   --cool-gray: #c5ccd9;
-  --green: #707fbc;
+  --blue: #707fbc;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 }
 
 custom-card {
-  background-color: var(--green);
+  background-color: var(--blue);
   color: var(--dark-gray);
   width: 20rem;
 }
@@ -22,4 +22,28 @@ custom-btn {
 
 custom-nav {
   background-color: var(--dark-gray);
+}
+
+.mymodal {
+  background-color: var(--blue);
+  color: var(--dark-gray);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 5;
+}
+
+.myoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
 }

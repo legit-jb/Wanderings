@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthenticationButton from './authentication-button'
 
 function NavBar () {
   return (
@@ -6,9 +7,30 @@ function NavBar () {
       <div className='container-fluid'>
         <ul className='navbar-nav nav-fill w-100'>
           <li className='nav-item'>
-            <a className='nav-link active' aria-current='page' href='#'>
+            <a
+              className='nav-link active nav-item dropdown dropdown-toggle'
+              aria-current='page'
+              role='button'
+              data-bs-toggle='dropdown'
+              aria-expanded='false'
+            >
               <i className='fas fa-bars'></i>
             </a>
+            <ul className='dropdown-menu bg-secondary p-2' aria-labelledby='dropdownMenuButton1'>
+              <li>
+                <a className='dropdown-item border-bottom border-dark p-2' href='#'>
+                  account
+                </a>
+              </li>
+              <li>
+                <a className='dropdown-item border-bottom border-dark p-2' href='#'>
+                  stats
+                </a>
+              </li>
+              <li className='p-2'>
+                <AuthenticationButton />
+              </li>
+            </ul>
           </li>
           <li className='nav-item'>
             <a className='nav-link' href='#'>
@@ -26,7 +48,10 @@ function NavBar () {
             >
               Tags
             </a>
-            <ul className='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+            <ul
+              className='dropdown-menu'
+              aria-labelledby='navbarDropdownMenuLink'
+            >
               <li>
                 <a className='dropdown-item' href='#'>
                   I guess
