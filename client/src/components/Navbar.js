@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 function NavBar (props) {
@@ -51,9 +52,9 @@ function NavBar (props) {
             
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#'>
+            <Link className='nav-link' to='/upload'>
               <i className='fas fa-plus'></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
