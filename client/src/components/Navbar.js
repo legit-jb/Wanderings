@@ -1,4 +1,5 @@
 import React from 'react'
+import TagsDropdown from './TagsDropdown'
 
 function NavBar () {
   return (
@@ -48,21 +49,7 @@ function NavBar () {
               className='dropdown-menu'
               aria-labelledby='navbarDropdownMenuLink'
             >
-              <li>
-                <a className='dropdown-item' href='#'>
-                  I guess
-                </a>
-              </li>
-              <li>
-                <a className='dropdown-item' href='#'>
-                  this will
-                </a>
-              </li>
-              <li>
-                <a className='dropdown-item' href='#'>
-                  map over the tags?
-                </a>
-              </li>
+              <TagsDropdown />
             </ul>
           </li>
           <li className='nav-item'>
