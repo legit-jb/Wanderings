@@ -31,6 +31,7 @@ const sample = [
 // end sample array
 
 export const fakeUser = {
+  id: "kasdfkjj",
   username: "J Brennan",
   email: "nonya@biz.com",
   usertags: ["hipster", "beer", "food", "date", "coffee", "home"],

@@ -1,7 +1,8 @@
 import React from 'react'
 import TagsDropdown from './TagsDropdown'
 
-function NavBar () {
+function NavBar (props) {
+  console.log ("this is in nabar props ",props)
   return (
     <nav className='navbar navbar-expand-lg navbar-dark custom-nav'>
       <div className='container-fluid'>
@@ -45,12 +46,9 @@ function NavBar () {
             >
               Tags
             </a>
-            <ul
-              className='dropdown-menu'
-              aria-labelledby='navbarDropdownMenuLink'
-            >
-              <TagsDropdown />
-            </ul>
+            
+              <TagsDropdown user = {props.user}/>
+            
           </li>
           <li className='nav-item'>
             <a className='nav-link' href='#'>

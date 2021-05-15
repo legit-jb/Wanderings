@@ -41,6 +41,7 @@ const Map = (props) => {
             <div className="leaflet-popup-image-com-row">
             <img src={mark.image} alt={mark.name} width="100" />
             <p>{mark.comments}</p>
+            {/* <span>{mark.tags}</span> */}
             </div>
           </Popup>
         </Marker>
