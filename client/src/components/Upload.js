@@ -85,7 +85,7 @@ function Upload () {
 
   return (
     <div>
-      <Navbar />
+      
       <div className='container'>
         <div className='card custom-card'>
           <form>
