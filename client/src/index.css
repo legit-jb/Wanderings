@@ -10,6 +10,10 @@ body {
   background-color: var(--dark-gray);
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .custom-card {
   background-color: var(--blue);
   color: var(--dark-gray);
@@ -21,6 +25,7 @@ body {
   background-color: var(--cool-gray);
 }
 
+/* -----navbar----- */
 .custom-nav {
   background-color: var(--dark-gray);
 }
@@ -28,6 +33,13 @@ body {
 .custom-nav a {
   color: var(--very-light);
 }
+
+.tag-list-item {
+  text-align: center;
+  margin-top:1em;
+  margin-bottom: 1em;
+}
+/* --end navbar -- */
 
 .mymodal {
   background-color: var(--blue);

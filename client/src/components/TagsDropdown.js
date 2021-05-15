@@ -1,11 +1,18 @@
 import React from "react";
-import {fakeUser as user} from "../components/FakeDBUser";
-
-
 
 const TagsDropdown = (props) => {
+    console.log("this is in tagsdropdown props ",props);
+    const {user:{usertags}} = props;
+    console.log("TagsDropdown: this is usertags", usertags);
     return (
-        <div> a drop down</div>
+        <ul
+              className='dropdown-menu'
+              aria-labelledby='navbarDropdownMenuLink'
+            >
+                {usertags.map ((tag) =>(
+                    <li className="tag-list-item clickable" key={props.id+tag}>{tag}</li>
+                ))}
+            </ul>
     )
 }
 
