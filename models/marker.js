@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const markerSchema = new Schema({
   date: { type: Date, default: Date.now },
   title: { type: String, required: true },
-  img: { type: String, required: true },
+  image: { type: String, required: true },
   tags: [String],
   lat: Number,
   lon: Number,

@@ -81,3 +81,8 @@ body {
   z-index: 1;
 }
 /*-- end leaflet --*/
+
+.display-image {
+  max-width: 1200px;
+  max-height: 1200px;
+}
