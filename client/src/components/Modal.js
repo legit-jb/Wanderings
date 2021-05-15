@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React, { useEffect, useState } from "react";
+import Modal from "react-modal";
 
-Modal.setAppElement('#root')
+Modal.setAppElement("#root");
 
 function TheModal() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  function toggleModal () {
-    setIsOpen(!isOpen)
+  function toggleModal() {
+    setIsOpen(!isOpen);
   }
+  useEffect(() => {
+    toggleModal();
+  }, []);
 
   return (
     <div>
-      <button onClick={toggleModal} className='btn custom-btn'>Open modal</button>
+      {/* <button onClick={toggleModal} className='btn custom-btn'>Open modal</button> */}
 
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
-        contentLabel='My dialog'
-        className='mymodal'
-        overlayClassName='myoverlay'
+        contentLabel="My dialog"
+        className="mymodal"
+        overlayClassName="myoverlay"
       >
         <div>
           <h2>Disclaimer</h2>
@@ -32,11 +35,13 @@ function TheModal() {
             </li>
             <li>Don’t trespass or explore unsafe/abandoned structures</li>
           </ul>
-          <button onClick={toggleModal} className='btn custom-btn'>Agree</button>
+          <button onClick={toggleModal} className="btn custom-btn">
+            Agree
+          </button>
         </div>
       </Modal>
     </div>
-  )
+  );
 }
 
 export default TheModal;
