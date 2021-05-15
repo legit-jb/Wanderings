@@ -1,8 +1,8 @@
 import React from 'react'
-import TagsDropdown from './TagsDropdown'
+
 
 function NavBar (props) {
-  console.log ("this is in nabar props ",props)
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark custom-nav'>
       <div className='container-fluid'>
@@ -47,7 +47,7 @@ function NavBar (props) {
               Tags
             </a>
             
-              
+        
             
           </li>
           <li className='nav-item'>

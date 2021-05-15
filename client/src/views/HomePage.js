@@ -12,7 +12,7 @@ const HomePage =() => {
   console.log ("HomePage: this is user",user);
   return (
     <div>
-        <Navbar user = {user} />
+        <Navbar />
         <Upload />
         <TheModal />
         <Map markers={user.markers}/>
