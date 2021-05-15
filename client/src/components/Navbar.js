@@ -47,7 +47,7 @@ function NavBar (props) {
               Tags
             </a>
             
-              <TagsDropdown user = {props.user}/>
+              
             
           </li>
           <li className='nav-item'>
