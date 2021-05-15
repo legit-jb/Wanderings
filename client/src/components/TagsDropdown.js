@@ -1,19 +1,27 @@
 import React from "react";
+import { UserContext } from "../contexts/UserContext";
 
-const TagsDropdown = (props) => {
-    console.log("this is in tagsdropdown props ",props);
-    const {user:{usertags}} = props;
-    console.log("TagsDropdown: this is usertags", usertags);
-    return (
-        <ul
-              className='dropdown-menu'
-              aria-labelledby='navbarDropdownMenuLink'
-            >
-                {usertags.map ((tag) =>(
-                    <li className="tag-list-item clickable" key={props.id+tag}>{tag}</li>
-                ))}
-            </ul>
-    )
-}
+const TagsDropdown = () => {
+  
+  return (
+    <UserContext.Consumer>{(context) =>{
+        const {user, user: {usertags}} = context;
+        return (
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {usertags.map((tag) => (
+              <li className="tag-list-item clickable" key={user.id + tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )
+        // end context return
+
+    }}
+    {/* end userContext.Consumer callback function */}
+    </UserContext.Consumer>
+  );
+  // end return
+};
 
 export default TagsDropdown;

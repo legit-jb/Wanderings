@@ -8,15 +8,15 @@ function TheModal() {
 
   function toggleModal() {
     setIsOpen(!isOpen);
-  }
+  };
+
+  // pops the modal up only one time when the page is loaded
   useEffect(() => {
     toggleModal();
   }, []);
 
   return (
     <div>
-      {/* <button onClick={toggleModal} className='btn custom-btn'>Open modal</button> */}
-
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}

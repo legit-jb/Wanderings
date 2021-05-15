@@ -3,19 +3,17 @@ import Map from "../components/Map";
 import Navbar from "../components/Navbar";
 import Upload from "../components/Upload";
 import TheModal from "../components/Modal";
-import {fakeUser as user} from "../components/FakeDBUser";
+import TagContextProvider from "../contexts/UserContext";
 
-
-
-const HomePage =() => {
-  
-  console.log ("HomePage: this is user",user);
+const HomePage =() => { 
   return (
     <div>
-        <Navbar user = {user} />
+        <Navbar />
         <Upload />
         <TheModal />
-        <Map markers={user.markers}/>
+        <TagContextProvider>
+        <Map />
+        </TagContextProvider>
     </div>
   )
 }

@@ -34,6 +34,10 @@ body {
   color: var(--very-light);
 }
 
+.dropdown-menu {
+  width: 100%; 
+}
+
 .tag-list-item {
   text-align: center;
   margin-top:1em;
