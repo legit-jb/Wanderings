@@ -3,7 +3,6 @@ import Map from "../components/Map";
 import Navbar from "../components/Navbar";
 import Upload from "../components/Upload";
 import TheModal from "../components/Modal";
-import AuthenticationButton from "../components/authentication-button";
 
 const HomePage =() => {
   const sample = [
@@ -37,7 +36,6 @@ const HomePage =() => {
         <Upload />
         <TheModal />
         <Map markers={sample}/>
-        <AuthenticationButton />
     </div>
   )
 }
