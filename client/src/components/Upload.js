@@ -64,12 +64,10 @@ function Upload () {
       ...markerData,
       [name]: value
     })
-    console.log(markerData)
   }
 
   const saveImage = e => {
     e.preventDefault()
-    console.log(markerData)
 
     API.saveMarker({
       title: markerData.title,
@@ -85,40 +83,79 @@ function Upload () {
 
   return (
     <div>
-      
       <div className='container'>
-        <div className='card custom-card'>
+        <div className='card custom-card text-center'>
           <form>
-            <input
-              className='form-control m-2'
-              type='file'
-              id='formFile'
-              onChange={e => setImage(e.target.files[0])}
-            />
+            <div class='row m-2'>
+              <label
+                for='formFile'
+                className='form-label col-sm-1 col-form-label'
+              >
+                File
+              </label>
+              <div className='col-sm-10'>
+                <input
+                  className='form-control m-2'
+                  type='file'
+                  id='formFile'
+                  onChange={e => setImage(e.target.files[0])}
+                />
+              </div>
+            </div>
             <button className='btn custom-btn m-2' onClick={uploadImage}>
               upload
             </button>
-            <input
-              className='form-control m-2'
-              type='text'
-              name='title'
-              placeholder='title'
-              onChange={handleInputChange}
-            />
-            <input
-              className='form-control m-2'
-              type='text'
-              name='comments'
-              placeholder='caption (optional)'
-              onChange={handleInputChange}
-            />
-            <input
-              className='form-control m-2'
-              type='text'
-              name='tags'
-              placeholder='tags, separated by commas'
-              onChange={handleInputChange}
-            />
+            <div class='row m-2'>
+              <label
+                for='formTitle'
+                className='form-label col-sm-1 col-form-label'
+              >
+                Title
+              </label>
+              <div className='col-sm-10'>
+                <input
+                  className='form-control'
+                  type='text'
+                  id='formTitle'
+                  name='title'
+                  placeholder='title'
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div class='row m-2'>
+              <label
+                for='formCaption'
+                className='form-label col-sm-1 col-form-label'
+              >
+                Caption
+              </label>
+              <div className='col-sm-10'>
+                <input
+                  className='form-control'
+                  type='text'
+                  id='formCaption'
+                  name='comments'
+                  placeholder='caption (optional)'
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div class='row m-2'>
+              <label for='formTags' className='form-label col-sm-1 col-form-label'>
+                Tags
+              </label>
+              <div className='col-sm-10'>
+                <input
+                  className='form-control'
+                  type='text'
+                  id='formTags'
+                  name='tags'
+                  placeholder='tags, separated by commas'
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
             <button className='btn custom-btn m-2' onClick={saveImage}>
               save
             </button>
