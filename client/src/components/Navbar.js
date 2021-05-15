@@ -1,5 +1,4 @@
 import React from 'react'
-import AuthenticationButton from './authentication-button'
 
 function NavBar () {
   return (
@@ -26,9 +25,6 @@ function NavBar () {
                 <a className='dropdown-item border-bottom border-dark p-2' href='#'>
                   stats
                 </a>
-              </li>
-              <li className='p-2'>
-                <AuthenticationButton />
               </li>
             </ul>
           </li>
