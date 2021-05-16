@@ -1,6 +1,8 @@
 import React from 'react'
 import TagsDropdown from "../components/TagsDropdown";
 import UserContextProvider from "../contexts/UserContext";
+import { Link } from 'react-router-dom'
+
 
 
 function NavBar (props) {
@@ -53,9 +55,9 @@ function NavBar (props) {
             </UserContextProvider>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#'>
+            <Link className='nav-link' to='/upload'>
               <i className='fas fa-plus'></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
