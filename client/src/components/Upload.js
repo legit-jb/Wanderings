@@ -7,11 +7,12 @@ function Upload () {
   const [image, setImage] = useState('')
   const [url, setUrl] = useState('')
   const [markerData, setMarkerData] = useState({
+    user_id:"60a01207f65faee88a5ac831",
     title: '',
-    image: '',
+    image: 'astring',
     tags: '',
-    lat: '',
-    lon: '',
+    lat: '48',
+    lon: '-48',
     comments: ''
   })
 
@@ -68,8 +69,9 @@ function Upload () {
 
   const saveImage = e => {
     e.preventDefault()
-
+    console.log(markerData);
     API.saveMarker({
+      user_id: markerData.user_id,
       title: markerData.title,
       image: markerData.image,
       tags: markerData.tags,

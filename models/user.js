@@ -3,7 +3,14 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     username: { type: String, required: true },
-    email: String,
+    email: {
+      type: String,
+      required: true
+   },
+   password: {
+      type: String,
+      required: true
+   },
     usertags: [String],
     notes: [
       {
@@ -11,7 +18,10 @@ const userSchema = new Schema({
         ref: "Marker"
       }
     ],
-  });
+  },{
+    timestamps: true,
+    collection: 'users'
+ });
   
   const User = mongoose.model("User", userSchema);
   
