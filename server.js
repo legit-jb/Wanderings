@@ -7,7 +7,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/');
-const { db } = require('./models/User');
+const { db } = require('./models/user');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
