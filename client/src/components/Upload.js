@@ -75,6 +75,11 @@ function Upload () {
   const saveImage = e => {
     e.preventDefault()
     console.log(markerData);
+
+    // let tagString = document.getElementById('formTags').value
+    // let imgTags = tagString.split(',')
+    // setMarkerData({...markerData, tags: imgTags});
+
     API.saveMarker({
       user_id: markerData.user_id,
       title: markerData.title,
@@ -84,7 +89,8 @@ function Upload () {
       lon: markerData.lon,
       comments: markerData.comments
     })
-      .then(() => resetForm())
+      .then(console.log(markerData))
+      .then(resetForm())
       .catch(err => console.log(err))
   }
 
@@ -173,6 +179,7 @@ function Upload () {
             </button>
           </form>
           <div className='container'>
+            {/* <p>All done? Return <Link to='/home'>Home</Link></p> */}
             <img src={url} className='display-image' />
           </div>
         </div>
