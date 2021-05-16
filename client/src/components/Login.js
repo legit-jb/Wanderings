@@ -1,9 +1,10 @@
 import React from "react";
 
-const Login = () => (
-    <div>
-      <h1>test</h1>
+const Login = () => {
+  return (
+    <div className='text-center'>
+      <h1>HELLLLLLLLOOOOOOOOO</h1>
     </div>
-  );
-  
-  export default Login;
+  )
+}
+export default Login;
