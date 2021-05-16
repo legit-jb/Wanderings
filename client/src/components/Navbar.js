@@ -1,4 +1,6 @@
 import React from 'react'
+import TagsDropdown from "../components/TagsDropdown";
+import UserContextProvider from "../contexts/UserContext";
 
 
 function NavBar (props) {
@@ -46,9 +48,9 @@ function NavBar (props) {
             >
               Tags
             </a>
-            
-        
-            
+            <UserContextProvider>
+            <TagsDropdown />
+            </UserContextProvider>
           </li>
           <li className='nav-item'>
             <a className='nav-link' href='#'>
