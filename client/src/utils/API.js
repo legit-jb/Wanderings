@@ -36,5 +36,13 @@ export default {
   // user logout
   logout: function () {
     return localStorage.removeItem("user");
+  },
+  // signup a user
+  signUp: function (userData) {
+    return axios.post("/api/signup", userData)
+  },
+  // login a user
+  signIn: function (userData) {
+    return axios.post("/api/signin", userData)
   }
 };
