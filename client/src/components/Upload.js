@@ -184,7 +184,7 @@ function Upload () {
           <div className='container'>
             <ShareButtons media={url} />
             {/* <p>All done? Return <Link to='/home'>Home</Link></p> */}
-            <img src={url} className='display-image' />
+            <img src={url} className='display-image mb-2' />
           </div>
         </div>
       </div>

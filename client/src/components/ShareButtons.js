@@ -15,24 +15,26 @@ import {
 } from 'react-share'
 
 const ShareButtons = props => {
+    const url='https://wanderings-project.herokuapp.com'
+
   return (
-    <div className='mt-2'>
-      <FacebookShareButton>
+    <div className='m-2'>
+      <FacebookShareButton url={url}>
         <FacebookIcon size={45} round={true} />
       </FacebookShareButton>
-      <TwitterShareButton>
+      <TwitterShareButton url={url}>
         <TwitterIcon size={45} round={true} />
       </TwitterShareButton>
-      <PinterestShareButton media={props.media}>
+      <PinterestShareButton url={url} media={props.media}>
         <PinterestIcon size={45} round={true} />
       </PinterestShareButton>
-      <FacebookMessengerShareButton>
+      <FacebookMessengerShareButton url={url}>
         <FacebookMessengerIcon size={45} round={true} />
       </FacebookMessengerShareButton>
-      <RedditShareButton>
+      <RedditShareButton url={url}>
         <RedditIcon size={45} round={true} />
       </RedditShareButton>
-      <LinkedinShareButton>
+      <LinkedinShareButton url={url}>
         <LinkedinIcon size={45} round={true} />
       </LinkedinShareButton>
     </div>
