@@ -15,7 +15,7 @@ import {
 } from 'react-share'
 
 const ShareButtons = props => {
-    const url='https://wanderings-project.herokuapp.com/upload'
+    const url='https://wanderings-project.herokuapp.com'
 
   return (
     <div className='m-2'>
