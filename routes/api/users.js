@@ -11,7 +11,4 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
-router.route("/sub/:sub")
-  .get(userController.findBySub);
-
 module.exports = router;
