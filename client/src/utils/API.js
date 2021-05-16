@@ -9,17 +9,9 @@ export default {
   getUser: function (id) {
     return axios.get("/api/users/" + id);
   },
-  // get user by auth0 id(aka sub)
-  getUserSub: function (sub) {
-    return axios.get("/api/users/sub/" + sub);
-  },
   // delete user from mongoDB by mongoDB id
   deleteUser: function (id) {
     return axios.delete("/api/users/" + id);
-  },
-  //create a user in mongoDB by adding their sub value from auth0
-  saveUser: function (userData) {
-    return axios.post("/api/users", userData);
   },
   // get all markers in mongoDB
   getMarkers: function () {
