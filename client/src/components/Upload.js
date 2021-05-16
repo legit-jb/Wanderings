@@ -67,6 +67,7 @@ function Upload () {
       ...markerData,
       [name]: value
     })
+    console.log(markerData)
   }
 
   const resetForm = () => {
@@ -78,15 +79,24 @@ function Upload () {
     e.preventDefault()
     console.log(markerData);
 
-    // let tagString = document.getElementById('formTags').value
-    // let imgTags = tagString.split(',')
-    // setMarkerData({...markerData, tags: imgTags});
+    let tagString = document.getElementById('formTags').value
+
+    console.log(tagString)
+
+    let imgTags = tagString.split(',')
+
+    console.log(imgTags)
+    let theTags = imgTags.map(ele => ele.trim())
+    console.log(theTags)
+
+    
+    console.log(markerData)
 
     API.saveMarker({
       user_id: markerData.user_id,
       title: markerData.title,
       image: markerData.image,
-      tags: markerData.tags,
+      tags: theTags,
       lat: markerData.lat,
       lon: markerData.lon,
       comments: markerData.comments
@@ -173,16 +183,16 @@ function Upload () {
                   id='formTags'
                   name='tags'
                   placeholder='tags, separated by commas'
-                  onChange={handleInputChange}
+                  
                 />
               </div>
             </div>
+            <ShareButtons media={url} />
             <button className='btn custom-btn m-2' onClick={saveImage}>
               save
             </button>
           </form>
           <div className='container'>
-            <ShareButtons media={url} />
             {/* <p>All done? Return <Link to='/home'>Home</Link></p> */}
             <img src={url} className='display-image mb-2' />
           </div>
