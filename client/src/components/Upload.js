@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Coordinates from 'coordinate-parser'
 import API from '../utils/API'
 import Navbar from './Navbar'
+import MetaTags from './MetaTags'
+import ShareButtons from './ShareButtons'
 
 function Upload () {
   const [image, setImage] = useState('')
@@ -96,6 +98,7 @@ function Upload () {
 
   return (
     <div>
+      <MetaTags img={url}/>
       <Navbar />
       <div className='container d-flex justify-content-center'>
         <div className='card custom-card text-center'>
@@ -179,8 +182,9 @@ function Upload () {
             </button>
           </form>
           <div className='container'>
+            <ShareButtons media={url} />
             {/* <p>All done? Return <Link to='/home'>Home</Link></p> */}
-            <img src={url} className='display-image' />
+            <img src={url} className='display-image mb-2' />
           </div>
         </div>
       </div>
