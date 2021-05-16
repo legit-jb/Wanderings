@@ -6,6 +6,9 @@ const routes = require("./routes");
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const authRoutes = require('./routes/');
+const { db } = require('./models/User');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,6 +22,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(routes);
+app.use('/api', authRoutes);
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/wandering',
