@@ -66,6 +66,11 @@ function Upload () {
     })
   }
 
+  const resetForm = () => {
+    document.getElementById('uploadForm').reset()
+    setUrl(' ')
+  }
+
   const saveImage = e => {
     e.preventDefault()
 
@@ -77,17 +82,18 @@ function Upload () {
       lon: markerData.lon,
       comments: markerData.comments
     })
-      .then(() => console.log(markerData))
+      .then(() => resetForm())
       .catch(err => console.log(err))
   }
 
   return (
     <div>
       <Navbar />
-      <div className='container'>
+      <div className='container d-flex justify-content-center'>
         <div className='card custom-card text-center'>
-          <form>
-            <div class='row m-2'>
+        <p className="mt-3">Select file and click "upload", then enter info and click "save" to save to a marker and clear the form.</p>
+          <form id='uploadForm'>
+            <div className='row m-2'>
               <label
                 for='formFile'
                 className='form-label col-sm-1 col-form-label'
@@ -106,7 +112,7 @@ function Upload () {
             <button className='btn custom-btn m-2' onClick={uploadImage}>
               upload
             </button>
-            <div class='row m-2'>
+            <div className='row m-2'>
               <label
                 for='formTitle'
                 className='form-label col-sm-1 col-form-label'
@@ -124,7 +130,7 @@ function Upload () {
                 />
               </div>
             </div>
-            <div class='row m-2'>
+            <div className='row m-2'>
               <label
                 for='formCaption'
                 className='form-label col-sm-1 col-form-label'
@@ -142,8 +148,11 @@ function Upload () {
                 />
               </div>
             </div>
-            <div class='row m-2'>
-              <label for='formTags' className='form-label col-sm-1 col-form-label'>
+            <div className='row m-2'>
+              <label
+                for='formTags'
+                className='form-label col-sm-1 col-form-label'
+              >
                 Tags
               </label>
               <div className='col-sm-10'>
