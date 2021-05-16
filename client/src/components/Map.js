@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import L from 'leaflet';
+import { UserContext } from "../contexts/UserContext";
 
 delete L.Icon.Default.prototype._getIconUrl;
 

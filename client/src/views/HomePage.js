@@ -14,9 +14,9 @@ const HomePage =() => {
     <div>
         <Navbar />
         <TheModal />
-        <UserContextProvider>
+        {/* <UserContextProvider> */}
         <Map markers={user.markers}/>
-        </UserContextProvider>
+        {/* </UserContextProvider> */}
     </div>
   )
 }
