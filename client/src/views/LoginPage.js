@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from 'react';
+import Login from '../components/Login';
+import Signup from '../components/Signup';
 
 const LoginPage =() => {
-    
-    return (
+  const [status, setstatus] = useState(true);
+
+  return (
       <div>
-        
+       { status === true ? (<Login />) : (<Signup />) }
       </div>
     )
   }

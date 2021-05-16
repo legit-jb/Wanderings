@@ -33,4 +33,8 @@ export default {
   saveMarker: function (markerData) {
     return axios.post("/api/markers", markerData);
   },
+  // user logout
+  logout: function () {
+    return localStorage.removeItem("user");
+  }
 };
