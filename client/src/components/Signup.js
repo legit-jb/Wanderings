@@ -14,7 +14,6 @@ const Signup = () => {
 
   const saveUser = async (event) => {
     event.preventDefault();
-    console.log(userData);
 
     await API.signUp(userData);
     const userLogin = {
