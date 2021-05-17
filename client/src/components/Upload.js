@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Coordinates from "coordinate-parser";
+import Modal from "react-modal";
 import API from "../utils/API";
 import Map from "../components/Map";
-import MetaTags from "./MetaTags";
 import ShareButtons from "./ShareButtons";
 
 function Upload() {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const [isOpen, setIsOpen] = useState(false)
   const [markerData, setMarkerData] = useState({
     user_id: "60a01207f65faee88a5ac831",
     title: "",
@@ -105,12 +106,24 @@ function Upload() {
       .catch((err) => console.log(err));
   };
 
+  function toggleModal () {
+    // console.log("Modal: functionToggleModal: ",isOpen)
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div>
-      <MetaTags img={url} />
-      <Map />
-      <div className="container d-flex justify-content-center" id="upload-card">
-        <div className="card custom-card text-center">
+      <Map toggle={toggleModal}/>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel='My dialog'
+        className='mymodal'
+        overlayClassName='myoverlay'
+      >
+        <div className="modal-content">
+      <div className="scroll-component">
+        <div className="text-center scroll-content">
           <p className="mt-3">
             Select file and click "upload", then enter info and click "save" to
             save to a marker and clear the form.
@@ -119,7 +132,7 @@ function Upload() {
             <div className="row m-2">
               <label
                 for="formFile"
-                className="form-label col-sm-1 col-form-label"
+                className="form-label col-sm-2 col-form-label"
               >
                 File
               </label>
@@ -138,7 +151,7 @@ function Upload() {
             <div className="row m-2">
               <label
                 for="formTitle"
-                className="form-label col-sm-1 col-form-label"
+                className="form-label col-sm-2 col-form-label"
               >
                 Title
               </label>
@@ -156,7 +169,7 @@ function Upload() {
             <div className="row m-2">
               <label
                 for="formCaption"
-                className="form-label col-sm-1 col-form-label"
+                className="form-label col-sm-2 col-form-label"
               >
                 Caption
               </label>
@@ -174,7 +187,7 @@ function Upload() {
             <div className="row m-2">
               <label
                 for="formTags"
-                className="form-label col-sm-1 col-form-label"
+                className="form-label col-sm-2 col-form-label"
               >
                 Tags
               </label>
@@ -199,6 +212,8 @@ function Upload() {
           </div>
         </div>
       </div>
+      </div>
+      </Modal>
     </div>
   );
 }

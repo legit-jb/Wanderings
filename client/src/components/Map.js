@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import { UserContext } from "../contexts/UserContext";
+import Logout from './logoutbtn'
 
 // icons for the markers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -18,7 +19,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Map = () => {
+const Map = props => {
   const {
     user: { markers },
     user: { usertags },
@@ -46,40 +47,11 @@ const Map = () => {
         <div className="container-fluid">
           <ul className="navbar-nav nav-fill w-100">
             <li className="nav-item">
-              <a
-                className="nav-link active nav-item dropdown dropdown-toggle"
-                aria-current="page"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="fas fa-bars"></i>
-              </a>
-              <ul
-                className="dropdown-menu bg-secondary p-2"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
-                  <a
-                    className="dropdown-item border-bottom border-dark p-2"
-                    href="#"
-                  >
-                    account
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item border-bottom border-dark p-2"
-                    href="#"
-                  >
-                    stats
-                  </a>
-                </li>
-              </ul>
+              <span className="fancy blue">Wanderings <i class="fas fa-ring"></i></span>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Score
+                <Logout />
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -124,7 +96,7 @@ const Map = () => {
               {/* end dropdown */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/upload">
+              <Link className="nav-link" to="/upload" onClick={props.toggle}>
                 <i className="fas fa-plus"></i>
               </Link>
             </li>
