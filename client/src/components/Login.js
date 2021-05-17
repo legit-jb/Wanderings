@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import API from '../utils/API'
+import UserContext from "../contexts/UserContext";
 
 const Login = () => {
   const [userData, setUserData] = useState({});
+
+  const {setSearch} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -15,8 +18,10 @@ const Login = () => {
   const saveUser = async (event) => {
     event.preventDefault();
 
+
     await API.signIn(userData);
-    console.log(userData);
+    
+    console.log("");
   };
 
   return (
