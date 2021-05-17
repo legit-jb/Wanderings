@@ -25,7 +25,7 @@ const sample = [
     name: "The Abbaye",
     lat: 39.96223,
     long: -75.14298,
-    tags: ["hipster", "beer", "food", "date"],
+    tags: ["hipster", "beer", "food", "dating"],
   },
 ];
 // end sample array
@@ -34,6 +34,6 @@ export const fakeUser = {
   id: "kasdfkjj",
   username: "J Brennan",
   email: "nonya@biz.com",
-  usertags: ["hipster", "beer", "food", "date", "coffee", "home"],
+  usertags: ["hipster", "beer", "food", "dating", "coffee", "home"],
   markers: sample,
 };
