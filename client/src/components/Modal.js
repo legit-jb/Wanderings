@@ -7,10 +7,16 @@ function TheModal () {
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleModal () {
+    console.log("Modal: functionToggleModal: ",isOpen)
     setIsOpen(!isOpen)
   }
+  
   useEffect(() => {
+    if (sessionStorage.getItem('AnnouncementOnce') !== 'true'){
     toggleModal()
+    console.log("Modal: useEffect: ",isOpen)
+    sessionStorage.setItem('AnnouncementOnce','true');
+    }
   }, [])
 
   return (

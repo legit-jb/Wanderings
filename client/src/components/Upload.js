@@ -108,7 +108,7 @@ function Upload() {
   return (
     <div>
       <MetaTags img={url} />
-  <Map />
+      <Map />
       <div className="container d-flex justify-content-center" id="upload-card">
         <div className="card custom-card text-center">
           <p className="mt-3">
