@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 const Signup = () => {
   const [userData, setUserData] = useState({});
 
-  const {setSearch} = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -24,7 +24,15 @@ const Signup = () => {
       password: userData.password
     }
     API.signIn(userLogin); 
-    setSearch(userData.email);   
+    console.log ("Signup: heres the data from signup ",userData)
+    getUser(userData.email);
+  }
+
+  const getUser = async (email) => {
+    // event.preventDefault();
+    const user = await API.getEmail(email)
+    setUser(user.data[0]);
+    console.log ("signup: heres the user ", user.data[0])
   }
 
   return (

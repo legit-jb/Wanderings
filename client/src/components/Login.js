@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 const Login = () => {
   const [userData, setUserData] = useState({});
 
-  const {setSearch} = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -18,7 +18,9 @@ const Login = () => {
   const saveUser = async (event) => {
     event.preventDefault();
     await API.signIn(userData);
-    setSearch(userData.email);
+    console.log ("login: this is what login gets ",userData)
+    // setUser(userData);
+
   };
 
   return (
