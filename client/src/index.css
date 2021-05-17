@@ -72,6 +72,8 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+width: 100%; 
+}/*
 
 #tag-name {
   color: var(--blue);
@@ -154,3 +156,20 @@ h2 {
   color: var(--blue);
   font-size:xx-large;
 }
+
+/* scroll bar */
+.scroll-component::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scroll-component::-webkit-scrollbar-track {
+  background-color: var(--blue);
+}
+
+.scroll-component::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--cool-gray);
+  min-height: 5px;
+}
+
+
