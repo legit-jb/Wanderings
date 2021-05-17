@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import API from '../utils/API'
+import { UserContext } from "../contexts/UserContext";
 
 const Signup = () => {
   const [userData, setUserData] = useState({});
+
+  const {setSearch} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -20,7 +23,8 @@ const Signup = () => {
       email: userData.email,
       password: userData.password
     }
-    API.signIn(userLogin);    
+    API.signIn(userLogin); 
+    setSearch(userData.email);   
   }
 
   return (

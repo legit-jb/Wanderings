@@ -11,7 +11,7 @@ export default {
   },
   // get user by email
   getEmail: function (email) {
-    return axios.get("/api/users/" + email);
+    return axios.get("/api/users/email/" + email);
   },
   // delete user from mongoDB by mongoDB id
   deleteUser: function (id) {

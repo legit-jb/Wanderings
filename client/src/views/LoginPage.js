@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
 import About from '../components/About'
+import UserContextProvider, { UserContext } from '../contexts/UserContext';
+
 
 const LoginPage = () => {
   const [status, setStatus] = useState(true)
@@ -13,7 +15,9 @@ const LoginPage = () => {
           <About />
         </div>
       <div className='container d-flex justify-content-center'>
+        <UserContextProvider>
         <Login />
+        </UserContextProvider>
         </div>
         <div className='container-fluid d-flex justify-content-center'>
           <p>
@@ -31,7 +35,9 @@ const LoginPage = () => {
           <About />
         </div>
         <div className='container-fluid d-flex justify-content-center'>
+        <UserContextProvider>
           <Signup />
+          </UserContextProvider>
         </div>
         <div className='container-fluid d-flex justify-content-center'>
           <p>
