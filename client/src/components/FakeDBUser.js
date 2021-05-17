@@ -37,3 +37,4 @@ export const fakeUser = {
   usertags: ["hipster", "beer", "food", "dating", "coffee", "home"],
   markers: sample,
 };
+

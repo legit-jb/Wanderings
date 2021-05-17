@@ -1,5 +1,5 @@
 import React, { createContext, useEffect } from "react";
-import {FakeDBUser as user} from "../components/FakeDBUser";
+import {fakeUser as user} from "../components/FakeDBUser";
 import API from "../utils/API";
 
 export const UserContext = createContext({
