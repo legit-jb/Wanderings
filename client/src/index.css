@@ -30,6 +30,12 @@ body {
   background-color: var(--cool-gray);
 }
 
+.signup-card {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
 /* -----navbar----- */
 .custom-nav {
   background-color: var(--dark-gray);

@@ -24,10 +24,10 @@ const Signup = () => {
   }
 
   return (
-    <div>
+    <div className='card custom-card signup-card text-center'>
       <form id="signupForm">
         <div className="row m-2">
-          <label for="formName" className="form-label col-sm-1 col-form-label">
+          <label for="formName" className="form-label col-sm-2 col-form-label">
             Username
           </label>
           <div className="col-sm-10">
@@ -44,7 +44,7 @@ const Signup = () => {
         <div className="row m-2">
           <label
             for="formEmail"
-            className="form-label col-sm-1 col-form-label"
+            className="form-label col-sm-2 col-form-label"
           >
             Email
           </label>
@@ -60,7 +60,7 @@ const Signup = () => {
           </div>
         </div>
         <div className="row m-2">
-          <label for="formPassword" className="form-label col-sm-1 col-form-label">
+          <label for="formPassword" className="form-label col-sm-2 col-form-label">
             Password
           </label>
           <div className="col-sm-10">
@@ -75,7 +75,7 @@ const Signup = () => {
           </div>
         </div>
         <div className="row m-2">
-          <label for="formConfirmPassword" className="form-label col-sm-1 col-form-label">
+          <label for="formConfirmPassword" className="form-label col-sm-2 col-form-label">
             Confirm Password
           </label>
           <div className="col-sm-10">
@@ -89,7 +89,7 @@ const Signup = () => {
             />
           </div>
         </div>
-        <button className="btn custom-btn m-2" onClick={saveUser}>
+        <button className="btn custom-btn mb-2" onClick={saveUser}>
           Sign Up!
         </button>
       </form>
