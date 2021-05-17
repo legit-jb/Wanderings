@@ -18,7 +18,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 });
 
-const Map = () => {
+const Map = props => {
   const {
     user: { markers },
     user: { usertags },
@@ -124,7 +124,7 @@ const Map = () => {
               {/* end dropdown */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/upload">
+              <Link className="nav-link" to="/upload" onClick={props.toggle}>
                 <i className="fas fa-plus"></i>
               </Link>
             </li>
