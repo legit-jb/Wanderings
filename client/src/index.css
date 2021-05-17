@@ -8,6 +8,17 @@
 
 body {
   background-color: var(--dark-gray);
+  font-family: Montserrat, sans-serif;
+}
+
+h2 {
+  font-size: x-large;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.fancy {
+  font-family: Pacifico, sans-serif;
+  font-size: larger;
 }
 
 .clickable {
@@ -28,6 +39,12 @@ body {
 
 .custom-btn {
   background-color: var(--cool-gray);
+}
+
+.signup-card {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 /* -----navbar----- */
