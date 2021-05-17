@@ -1,14 +1,15 @@
 import React, { createContext, useEffect } from "react";
+import {fakeUser as user} from "../components/FakeDBUser";
 import API from "../utils/API";
 
 export const UserContext = createContext({
-  user: {},
+  user,
   search:"",
 });
 
 class UserContextProvider extends React.Component {
   state = {
-    user:{},
+    user,
     search: "",
   };
 
