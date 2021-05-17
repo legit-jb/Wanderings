@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
+import About from '../components/About'
 
 const LoginPage = () => {
   const [status, setStatus] = useState(true)
@@ -8,6 +9,9 @@ const LoginPage = () => {
   if (status) {
     return (
       <div>
+        <div className='container d-flex justify-content-center'>
+          <About />
+        </div>
       <div className='container d-flex justify-content-center'>
         <Login />
         </div>
@@ -23,6 +27,9 @@ const LoginPage = () => {
   } else {
     return (
       <div>
+        <div className='container d-flex justify-content-center'>
+          <About />
+        </div>
         <div className='container-fluid d-flex justify-content-center'>
           <Signup />
         </div>
