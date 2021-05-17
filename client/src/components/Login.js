@@ -20,8 +20,8 @@ const Login = () => {
 
 
     await API.signIn(userData);
-    
-    console.log("");
+    setSearch(userData.email);
+    console.log ("Login: setSearch is setting ", userData.email)
   };
 
   return (

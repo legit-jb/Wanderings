@@ -20,6 +20,7 @@ const Signup = () => {
       email: userData.email,
       password: userData.password
     }
+    setSearch(userData.email);
     API.signIn(userLogin);    
   }
 

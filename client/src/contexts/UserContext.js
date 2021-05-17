@@ -18,7 +18,7 @@ class UserContextProvider extends React.Component {
 
   render() {
     return (
-      <UserContext.Provider value={{ ...this.state}}>
+      <UserContext.Provider value={{ ...this.state, setSearch: this.setSearch}}>
           {this.props.children}
       </UserContext.Provider>
     );
