@@ -172,4 +172,8 @@ width: 100%;
   min-height: 5px;
 }
 
-
+/* drop-down */
+.custom-dropdown {
+  color: var(--cool-gray);
+  background-color: var(--dark-gray);
+}
