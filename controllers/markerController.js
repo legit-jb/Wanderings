@@ -11,6 +11,11 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  findByOwner: function (req, res) {
+    db.Marker.find({owner: req.params.owner})
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   create: function (req, res) {
     db.Marker.create(req.body)
       .then((dbModel) => res.json(dbModel))

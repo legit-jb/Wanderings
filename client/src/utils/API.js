@@ -25,6 +25,10 @@ export default {
   getMarker: function (id) {
     return axios.get("/api/markers/" + id);
   },
+  //get marker by owner
+  getUserMarker: function (owner) {
+    return axios.get("/api/markers/owner" + owner);
+  },
   //delete a marker from mongoDB by marker id
   deleteMarker: function (id) {
     return axios.delete("/api/markers/" + id);
