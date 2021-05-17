@@ -67,7 +67,7 @@ const Map = props => {
               </a>
               {/* dropdown */}
               <ul
-                className="dropdown-menu"
+                className="dropdown-menu custom-dropdown"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li
