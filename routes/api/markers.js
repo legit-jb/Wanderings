@@ -11,4 +11,8 @@ router
   .put(markerController.update)
   .delete(markerController.remove);
 
+router
+  .route("/owner/:owner")
+  .get(markerController.findByOwner);
+
 module.exports = router;
