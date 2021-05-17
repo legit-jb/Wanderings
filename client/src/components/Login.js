@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import API from '../utils/API'
-import UserContext from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 
 const Login = () => {
   const [userData, setUserData] = useState({});
@@ -17,11 +17,8 @@ const Login = () => {
 
   const saveUser = async (event) => {
     event.preventDefault();
-
-
     await API.signIn(userData);
     setSearch(userData.email);
-    console.log ("Login: setSearch is setting ", userData.email)
   };
 
   return (

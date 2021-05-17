@@ -1,19 +1,27 @@
-import React, { createContext } from "react";
-import {fakeUser as user} from "../components/FakeDBUser";
+import React, { createContext, useEffect } from "react";
+import API from "../utils/API";
 
 export const UserContext = createContext({
-  user,
-  search: "",
-  setSearch()
+  user: {},
+  search:"",
 });
-
-setSearch =(email) => {
-  this.setState({ search: email })
-}
 
 class UserContextProvider extends React.Component {
   state = {
-    user,
+    user:{},
+    search: "",
+  };
+
+  // setUser = (email) => {
+  //   const userTemp = API.getEmail(email);
+  //   this.setState ({user: userTemp});
+  // }
+
+  setSearch = (email) => {
+    this.setState({ search: email })
+    // const userTemp = API.getEmail(email);
+    // this.setState ({user: userTemp});
+    // setUser (email);
   };
 
   render() {
