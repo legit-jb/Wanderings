@@ -121,8 +121,9 @@ function Upload() {
         className='mymodal'
         overlayClassName='myoverlay'
       >
-      <div >
-        <div className="text-center">
+        <div className="modal-content">
+      <div className="scroll-component">
+        <div className="text-center scroll-content">
           <p className="mt-3">
             Select file and click "upload", then enter info and click "save" to
             save to a marker and clear the form.
@@ -210,6 +211,7 @@ function Upload() {
             <img src={url} className="display-image mb-2" />
           </div>
         </div>
+      </div>
       </div>
       </Modal>
     </div>
