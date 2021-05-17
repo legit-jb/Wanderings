@@ -23,7 +23,7 @@ const Map = () => {
     user: { markers },
     user: { usertags },
   } = useContext(UserContext);
-  const [currentTag, setCurrentTag] = useState("all");
+  const [currentTag, setCurrentTag] = useState("ALL");
 
   let start = [markers[0].lat, markers[0].long];
   const polyLine = [];
@@ -31,7 +31,7 @@ const Map = () => {
 
   // sort the markers by tag
   markers.map((mark) => {
-    if (mark.tags.includes(currentTag) || currentTag === "all") {
+    if (mark.tags.includes(currentTag) || currentTag === "ALL") {
       sortedArray.push(mark);
       polyLine.push([mark.lat, mark.long]);
     }
@@ -91,13 +91,23 @@ const Map = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Tags
+                Tags <span id="tag-name">({currentTag})</span>
               </a>
               {/* dropdown */}
               <ul
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
+                <li
+                  className="tag-list-item clickable"
+                  value={"ALL"}
+                  key={"ALL"}
+                  onClick={() => {
+                    setCurrentTag("ALL");
+                  }}
+                >
+                  ALL
+                </li>
                 {usertags.map((tag) => (
                   <li
                     className="tag-list-item clickable"
@@ -105,10 +115,6 @@ const Map = () => {
                     key={tag}
                     onClick={(e) => {
                       setCurrentTag(tag);
-                      console.log(
-                        "TagsDropdown: this is the clicked value ",
-                        e.target.value
-                      );
                     }}
                   >
                     {tag}
@@ -131,23 +137,33 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {sortedArray.map((mark) => (
-          <Marker key={mark.id} position={[mark.lat, mark.long]}>
-            {console.log("Map: this is the full marker being mapped ", mark)}
-            {console.log("Map: this is the marker coords ", [
-              mark.lat,
-              mark.long,
-            ])}
+          <Marker
+            color="#707fbc"
+            key={mark.id}
+            position={[mark.lat, mark.long]}
+          >
             <Popup>
               <span>{mark.name}</span>
               <div className="leaflet-popup-image-com-row">
                 <img src={mark.image} alt={mark.name} width="100" />
                 <p>{mark.comments}</p>
-                <span>{mark.tags}</span>
+                {mark.tags.map((tag) => (
+                  <span
+                    className="popup-tag clickable"
+                    value={tag}
+                    key={tag}
+                    onClick={(e) => {
+                      setCurrentTag(tag);
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </Popup>
           </Marker>
         ))}
-        <Polyline positions={polyLine} />
+        <Polyline color="#707fbc" positions={polyLine} />
       </MapContainer>
     </div>
   );
