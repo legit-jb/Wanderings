@@ -12,7 +12,7 @@ router
   .delete(userController.remove);
 
 router
-  .route("/:email")
+  .route("/email/:email")
   .get(userController.findByEmail);
 
 module.exports = router;
