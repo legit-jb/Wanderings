@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 const Login = () => {
   const [userData, setUserData] = useState({});
 
-  const {setUser} = useContext(UserContext);
+  const {setSearch} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -19,7 +19,7 @@ const Login = () => {
     event.preventDefault();
     await API.signIn(userData);
     console.log ("login: this is what login gets ",userData)
-    // setUser(userData);
+    setSearch(userData);
 
   };
 
