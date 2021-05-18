@@ -27,7 +27,19 @@ const Signup = () => {
     }
     API.signIn(userLogin); 
     history.push('/home')
+    // setSearch(userData.email)
   }
+
+  // const getUser =(email) =>{
+  //     API.getEmail(email)
+  //     .then((res)=> {
+  //       console.log("UserContext: this is the .then return",res.data[0])
+  //     })
+  //     .then((res) => {
+  //       setUser({user: res.data[0]})
+  //     })
+
+  //   }
 
   return (
     <div className='card custom-card signup-card text-center'>
