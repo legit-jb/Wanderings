@@ -41,5 +41,5 @@ Wanderings is a MERN stack application--it uses [MongoDB](https://www.mongodb.co
 
 ## Credits
 Artemis - Cloudinary and upload form, share buttons, UI design  
-J -  
+J - Leaflet, Map logic, dropdown, user context, project management
 Sean - Express, Node, and Mongoose setup, initial models, apis and routing
