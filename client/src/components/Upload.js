@@ -68,7 +68,6 @@ function Upload() {
       ...markerData,
       [name]: value,
     });
-    console.log(markerData);
   };
 
   const resetForm = () => {
@@ -90,6 +89,7 @@ function Upload() {
     let theTags = imgTags.map((ele) => ele.trim());
     console.log(theTags);
 
+    setMarkerData({...markerData, tags: theTags})
     console.log(markerData);
 
     API.saveMarker({
@@ -98,7 +98,7 @@ function Upload() {
       image: markerData.image,
       tags: theTags,
       lat: markerData.lat,
-      lon: markerData.lon,
+      long: markerData.lon,
       comments: markerData.comments,
     })
       .then(console.log(markerData))
