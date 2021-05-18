@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
 import API from '../utils/API'
 import { UserContext } from "../contexts/UserContext";
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const [userData, setUserData] = useState({});
 
   const {setSearch} = useContext(UserContext);
+  const history = useHistory();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -26,6 +28,8 @@ const Signup = () => {
     API.signIn(userLogin); 
     // console.log ("Signup: heres the data from signup ",userData)
     setSearch(userData.email);
+    console.log ("Signup: heres the data from signup ",userData)
+    history.push('/home')
   }
 
   // const getUser = async (email) => {
