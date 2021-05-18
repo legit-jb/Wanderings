@@ -22,7 +22,7 @@ const Login = () => {
     event.preventDefault();
     await API.signIn(userData);
     console.log ("login: this is what login gets ",userData)
-    setSearch(userData);
+    setSearch(userData.email);
     history.push('/home')
   };
 
