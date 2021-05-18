@@ -1,33 +1,44 @@
-import React, { createContext, useEffect } from "react";
-import {fakeUser as user} from "../components/FakeDBUser";
+import React, { createContext, useEffect, setState, Component } from "react";
+// import {fakeUser as user} from "../components/FakeDBUser";
 import API from "../utils/API";
 
+
 export const UserContext = createContext({
-  user,
+  user: {},
   search:"",
 });
 
 class UserContextProvider extends React.Component {
   state = {
-    user,
+    user: {},
     search: "",
   };
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.search !== this.state.search) {
+  //     console.log("componentDidUpdate fired off")
+  //     const userTemp = API.getEmail(this.state.search);
+  //     console.log("the email search returned ", API.getEmail(this.state.search))
+  //     this.setState ({user: userTemp});
+  //   }
+  // }
 
   // setUser = (email) => {
   //   const userTemp = API.getEmail(email);
   //   this.setState ({user: userTemp});
   // }
 
-  setSearch = (email) => {
-    this.setState({ search: email })
-    // const userTemp = API.getEmail(email);
-    // this.setState ({user: userTemp});
-    // setUser (email);
-  };
+  // setSearch = (email) => {
+  //   this.setState({ search: email });
+  // };
+
+  setUser = (userObj) => {
+    this.setState({ user: userObj })
+  }
 
   render() {
     return (
-      <UserContext.Provider value={{ ...this.state, setSearch: this.setSearch}}>
+      <UserContext.Provider value={{ ...this.state, setUser: this.setUser}}>
           {this.props.children}
       </UserContext.Provider>
     );

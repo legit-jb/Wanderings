@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import {fakeUser } from "../components/FakeDBUser";
 import { Link } from "react-router-dom";
 import {
   MapContainer,
@@ -20,10 +21,17 @@ L.Icon.Default.mergeOptions({
 });
 
 const Map = props => {
-  const {
-    user: { markers },
-    user: { usertags },
-  } = useContext(UserContext);
+//   const {
+//     user: { markers },
+//     user: { usertags },
+//   } = useContext(UserContext);
+
+    const {
+      markers,
+      usertags,
+    } = fakeUser;
+  
+  console.log ("markers ",fakeUser);
   const [currentTag, setCurrentTag] = useState("ALL");
 
   let start = [markers[0].lat, markers[0].long];

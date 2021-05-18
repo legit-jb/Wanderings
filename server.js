@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(routes);
-app.use('/api', authRoutes);
+// app.use('/api', authRoutes);
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/wandering',
