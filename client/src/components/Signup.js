@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react'
 import API from '../utils/API'
 import { UserContext } from "../contexts/UserContext";
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const [userData, setUserData] = useState({});
+
+  const history = useHistory();
 
   const {setUser} = useContext(UserContext);
 
@@ -26,6 +29,7 @@ const Signup = () => {
     API.signIn(userLogin); 
     console.log ("Signup: heres the data from signup ",userData)
     getUser(userData.email);
+    history.push('/home')
   }
 
   const getUser = async (email) => {
