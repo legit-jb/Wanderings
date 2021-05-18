@@ -21,10 +21,11 @@ L.Icon.Default.mergeOptions({
 });
 
 const Map = props => {
-//   const {
-//     user: { markers },
-//     user: { usertags },
-//   } = useContext(UserContext);
+  const {
+    user
+    // user: { markers },
+    // user: { usertags },
+  } = useContext(UserContext);
 
     const {
       markers,
