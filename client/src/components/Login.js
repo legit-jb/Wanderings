@@ -5,8 +5,6 @@ import { useHistory } from 'react-router-dom'
 const Login = () => {
   const [userData, setUserData] = useState({});
 
-
-  const {setSearch} = useContext(UserContext);
   const history = useHistory();
 
   const handleInputChange = (event) => {
