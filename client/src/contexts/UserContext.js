@@ -24,8 +24,15 @@ class UserContextProvider extends React.Component {
     if (prevState.search !== this.state.search) {
       console.log("componentDidUpdate fired off")
       // const userTemp = API.getEmail(this.state.search);
-      console.log("the email search returned ", API.getEmail(this.state.search))
-      this.setState ({user: API.getEmail(this.state.search)});
+      // this.setState ({user: API.getEmail(this.state.search)});
+      API.getEmail(this.state.search)
+      .then((res)=> {
+        console.log("UserContext: this is the .then return",res)
+      })
+      .then((res) => {
+        this.setState({user: res})
+      })
+
     }
   }
 
