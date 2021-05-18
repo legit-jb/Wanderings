@@ -27,10 +27,10 @@ class UserContextProvider extends React.Component {
       // this.setState ({user: API.getEmail(this.state.search)});
       API.getEmail(this.state.search)
       .then((res)=> {
-        console.log("UserContext: this is the .then return",res)
+        console.log("UserContext: this is the .then return",res.data[0])
       })
       .then((res) => {
-        this.setState({user: res})
+        this.setState({user: res.data[0]})
       })
 
     }
