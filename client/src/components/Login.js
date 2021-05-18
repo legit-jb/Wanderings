@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import API from '../utils/API'
-import { UserContext } from "../contexts/UserContext";
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -21,8 +20,6 @@ const Login = () => {
   const saveUser = async (event) => {
     event.preventDefault();
     await API.signIn(userData);
-    console.log ("login: this is what login gets ",userData)
-    setSearch(userData.email);
     history.push('/home')
   };
 
