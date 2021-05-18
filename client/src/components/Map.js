@@ -32,7 +32,6 @@ const Map = props => {
       usertags,
     } = fakeUser;
   
-  console.log ("markers ",fakeUser);
   const [currentTag, setCurrentTag] = useState("ALL");
 
   let start = [markers[0].lat, markers[0].long];
