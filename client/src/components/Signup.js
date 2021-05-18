@@ -6,9 +6,8 @@ import { useHistory } from 'react-router-dom';
 const Signup = () => {
   const [userData, setUserData] = useState({});
 
+  const {setSearch} = useContext(UserContext);
   const history = useHistory();
-
-  const {setUser} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,17 +26,18 @@ const Signup = () => {
       password: userData.password
     }
     API.signIn(userLogin); 
+    // console.log ("Signup: heres the data from signup ",userData)
+    setSearch(userData.email);
     console.log ("Signup: heres the data from signup ",userData)
-    getUser(userData.email);
     history.push('/home')
   }
 
-  const getUser = async (email) => {
-    // event.preventDefault();
-    const user = await API.getEmail(email)
-    setUser(user.data[0]);
-    console.log ("signup: heres the user ", user.data[0])
-  }
+  // const getUser = async (email) => {
+  //   // event.preventDefault();
+  //   const user = await API.getEmail(email)
+  //   setUser(user.data[0]);
+  //   console.log ("signup: heres the user ", user.data[0])
+  // }
 
   return (
     <div className='card custom-card signup-card text-center'>

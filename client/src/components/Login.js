@@ -6,9 +6,9 @@ import { useHistory } from 'react-router-dom'
 const Login = () => {
   const [userData, setUserData] = useState({});
 
-  const history = useHistory();
 
-  const {setUser} = useContext(UserContext);
+  const {setSearch} = useContext(UserContext);
+  const history = useHistory();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -22,7 +22,7 @@ const Login = () => {
     event.preventDefault();
     await API.signIn(userData);
     console.log ("login: this is what login gets ",userData)
-    // setUser(userData);
+    setSearch(userData);
     history.push('/home')
   };
 
