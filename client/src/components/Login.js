@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
 import API from '../utils/API'
 import { useHistory } from 'react-router-dom'
+import { UserContext } from "../contexts/UserContext";
 
 const Login = () => {
   const [userData, setUserData] = useState({});
 
   const history = useHistory();
+  const {setSearch} = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -19,6 +21,7 @@ const Login = () => {
     event.preventDefault();
     await API.signIn(userData);
     history.push('/home')
+    // setSearch(userData.email);
   };
 
   return (

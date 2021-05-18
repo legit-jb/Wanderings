@@ -1,32 +1,36 @@
-import React, {useState, context, createContext, useEffect} from 'react';
+import React, { createContext, useEffect, setState, Component, prevState } from "react";
 import API from "../utils/API";
 
 export const UserContext = createContext({
+  user: {},
+  search: "",
+});
+
+class UserContextProvider extends React.Component {
+  state = {
     user: {},
     search: "",
-  });
+  };
 
-const UserContextProvider = ({children}) =>{
-    const [user, setUser] = useState({});
-    const [email, setEmail] = useState(null);
 
-    // let setSearch = (email) => {
-    //     setSearch({ search: email });
-    //   };
-    function setSearch(email) {
-        setEmail(email);
-    }
+  setUser = (userTemp) => {
+    this.setState ({user: userTemp});
+  }
 
-    useEffect(() =>{
-        API.getEmail(email).then(res => setUser(res.data))
-    },[email]);
-   
-   const { Provider } = UserContext
-   return(
-       <UserContext.Provider value={{email, user, setSearch}}>
-           {children}
-       </UserContext.Provider>
-   )
+  setSearch = (email) => {
+    this.setState({ search: email });
+  };
+
+  render() {
+    return (
+      <UserContext.Provider value={{ ...this.state, setSearch: this.setSearch, setUser: this.setUser }}>
+        {this.props.children}
+      </UserContext.Provider>
+    );
+    // end return
+  }
+  // end render
 }
+// end class
 
-export default UserContextProvider
+export default UserContextProvider;
